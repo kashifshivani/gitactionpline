@@ -64,10 +64,11 @@ jobs:
         run: terraform validate
         working-directory: environment/dev
 
-      - name: Terraform Plan
+      
+      - name: terraform plan
         id: plan
-        run: terraform plan -var-file=terraform.tfvars -out=tfplan
-        working-directory: environment/dev
+        run: terraform plan
+        working-directory: enviroments/dev
         
           
   

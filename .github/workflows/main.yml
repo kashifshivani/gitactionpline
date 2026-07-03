@@ -21,6 +21,9 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+      - name: Terraform Setup
+        uses: hashicorp/setup-terraform@v3
+        
       - name: Azure CLI
         uses: azure/cli@v2
         with:
@@ -33,6 +36,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.13.0"
 
       - name: Azure Login  
         uses: azure/login@v3

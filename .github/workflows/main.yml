@@ -65,9 +65,9 @@ jobs:
         working-directory: environment/dev
 
       
-      - name: terraform plan
+      - name: Terraform Plan
         id: plan
-        run: terraform plan
+        run: terraform plan -out=tfplan
         working-directory: environment/dev
 
       - name: Upload Terraform Plan
